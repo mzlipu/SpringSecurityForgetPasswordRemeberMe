@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Login</title>
+</head>
+<body th:style="'background:url(' + @{/assets/images/background.jpg} + ');'">
+<th:block th:replace="fragments/header :: header"/>
+
+<div class="container">
+    <div class="row pt-4 mt-4 justify-content-md-center">
+        <div class="col col-md-6 mb-4">
+            <form th:action="@{/login}" method="POST" class="form-signin">
+                <h3 class="form-header text-uppercase font-weight-bold">Sign in</h3>
+                <div class="form-group">
+                    <label for="username">Email Here: </label>
+                    <input type="email" class="form-control" id="username" name="username" placeholder="Your Email" autofocus="autofocus">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
+                </div>
+                <button class="btn-form" name="Submit" type="Submit">Sign In</button>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-group float-left">
+                            <!--Start code for remember me-->
+                            <input type="checkbox" class="form-check-input" id="check" name="remember-me">
+                            <label for="check" class="form-check-label "><p>Remember Me</p></label>
+                            <!--End code for remember me-->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="float-right">
+                            <a class="reset" th:href="@{/forgot-password}">Forget Password</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!--<th:block th:replace="fragments/footer :: footer"/>-->
+
+</body>
+</html>
